@@ -4,4 +4,12 @@
 
 .tableContainer{
   margin-top: 2rem;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px){
+  .projectContainer{
+    padding: 2rem 10px 10px 10px;
+  }
 }

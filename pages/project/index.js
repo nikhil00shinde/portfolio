@@ -1,65 +1,71 @@
 import React from "react";
 import {
   Table,
-  Thead,
   Tbody,
-  Tfoot,
   Tr,
-  Th,
   Td,
-  TableCaption,
   TableContainer,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Heading } from '@chakra-ui/react';
 import classes from "../../styles/project.module.css";
+import { useSpring, animated,config,easings } from 'react-spring'
+
+
+
 function index(){
+
+  
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const props = useSpring({
+    from: { width: "20%"  },
+    to: { width: "100%" },
+    config: {
+      duration: 2000,
+      mass: 1, tension: 280, friction: 120
+    },
+    leave:{
+      width:"20%",
+      opacity:"0.25"
+    }
+   
+  })
+
   return (
     <>
     <Head>
       <title>Nikhil&quot;s Project</title>
     </Head>
-    <div className={classes.projectContainer}>
+    <animated.div style={props} className={classes.projectContainer}>
     <Heading>Nikhil&quot;s Project</Heading>
     <div className={classes.tableContainer}>
-      <TableContainer>
-        <Table variant='striped' colorScheme='gray'>
-              <TableCaption>Imperial to metric conversion factors</TableCaption>
-              <Thead>
-                <Tr>
-                  <Th>Project Name</Th>
-                  <Th>Description</Th>
-                  <Th>Link</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td>inches</Td>
-                  <Td>millimetres (mm)</Td>
-                  <Td>25.4</Td>
-                </Tr>
-                <Tr>
-                  <Td>feet</Td>
-                  <Td>centimetres (cm)</Td>
-                  <Td>30.48</Td>
-                </Tr>
-                <Tr>
-                  <Td>yards</Td>
-                  <Td>metres (m)</Td>
-                  <Td>0.91444</Td>
-                </Tr>
-              </Tbody>
-              <Tfoot>
-                <Tr>
-                  <Th>To convert</Th>
-                  <Th>into</Th>
-                  <Th>multiply by</Th>
-                </Tr>
-              </Tfoot>
+      <TableContainer  
+      boxShadow="md" 
+      size="lg"
+      overflowX="hidden"
+      width={[
+        '100%', 
+        '100%', 
+        '90%', 
+        '90%', 
+      ]}
+    >
+        <Table variant='mytable'  >
+            <Tbody>
+              <Tr>
+                  <Td color="teal.400" width="30%">Project Name</Td>
+                  <Td width="60%">Description</Td>
+                  <Td width="20%">Github</Td>
+              </Tr>
+                {/* to render the projects */}
+               {
+                   
+               }
+            </Tbody>
           </Table>
       </TableContainer>
       </div>
-    </div>
+    </animated.div>
 </>
   )
 }
