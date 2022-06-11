@@ -1,14 +1,19 @@
 import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from "../styles/theme"
-console.log("🚀 ~ file: _app.js ~ line 4 ~ theme", theme)
+import { motion, AnimatePresence } from 'framer-motion';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps,router }) {
  
   return (
+    
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+        <AnimatePresence exitBeforeEnter >
+          <motion.div key={router.route}>
+            <Component {...pageProps} />
+            </motion.div>
+       </AnimatePresence>
+      </ChakraProvider>
   )
 }
 

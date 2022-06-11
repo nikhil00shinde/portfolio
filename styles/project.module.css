@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.heading{
+  font-size: 32px;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 768px){
   .projectContainer{
