@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.leftHalf{
+  height: 2rem;
+  width: 2rem;
+  border: 5px solid;
+}
+
+.rightHalf{
+  height: 2rem;
+  width: 2rem;
+  border: 5px solid;
+ 
+}
+
+.box{
+  height: 2rem;
+  width: 2rem;
+  border: 5px solid;
+  margin: 0 1rem;
+}
