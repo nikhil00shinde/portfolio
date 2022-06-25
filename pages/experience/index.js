@@ -1,10 +1,25 @@
 import React from 'react';
 import classes from "../../styles/experience.module.css";
 import {motion} from "framer-motion";
-import { Flex,Box, Heading } from '@chakra-ui/react';
+import { Flex,Box, Heading, transition } from '@chakra-ui/react';
+import Link from 'next/link';
+import {
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from '@chakra-ui/react'
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
-  animate:{width:"100vw",height:"100vh",opacity:0.7},exit:{width:"0%",height:"0%",opacity:0}
+  animate:{width:"100vw",height:"100vh",opacity:1},
+  exit:{width:"0%",height:"0%",opacity:0}
+}
+
+const variant2 = {
+  initial:{width:"0%",height:"0%",opacity:0},
+  animate:{width:"100vw",height:"100%",opacity:1},
+  exit:{width:"0%",height:"0%",opacity:0,}
 
 }
 
@@ -15,23 +30,41 @@ function Index() {
     initial="initial"
     animate="animate"
     exit="exit"
-    transition={{duration:1.5,type: "spring", bounce: 0.75,stiffness: 20,mass: 0.3 ,damping: 10 }}
+    transition={{duration:2,type: "spring", bounce: 0.75,stiffness: 20,mass: 0.3 ,damping: 10 }}
     className={classes.container}
     >
-  <Flex maxW='2xl'
-  centerContent 
-  justifyContent="center" 
-  alignItems="center"
-  flexDirection="column"
-  >
-        <Heading>Experience</Heading>
-  <Box padding='4' bg='blue.400' color='black' maxW='md'>
-    There are many benefits to a joint design and development system. Not only
-    does it bring benefits to the design team, but it also brings benefits to
-    engineering teams. It makes sure that our experiences have a consistent look
-    and feel, not just in our design specs, but in production.
-  </Box>
-</Flex>
+      <motion.div
+        variants={variant2}
+        transition={{duration:2}}
+        style={{display:"flex",justifyContent:"center",alignItems: "flex-start",paddingTop:"7rem"}}
+      >
+      <Flex
+    
+      maxW='2xl'
+      centerContent 
+      justifyContent="center" 
+      alignItems="center"
+      flexDirection="column"
+      >
+      <Heading as='h2' size='xl' sx={{  color: 'white'  }}>Experience</Heading>
+      <Box padding='4' bg='black' color='black' minW="25rem" maxW='24rem' mt='2'>
+      <UnorderedList>
+  <ListItem color='white'>
+  <Heading as='h3' size='lg' sx={{  color: 'white'  }}>
+          Full Stack Intern
+       </Heading>
+       <Heading mt="3" as='h4' size='md' sx={{  color: 'white'  }}>
+       <Link href="https://www.happilyever.co/" >
+       <a target="_blank" rel="noopener noreferrer">HappilyEver Lens</a></Link>
+  </Heading>
+  </ListItem>
+  
+</UnorderedList>
+      
+
+      </Box>
+    </Flex>
+    </motion.div>
     </motion.div>
   )
 }
