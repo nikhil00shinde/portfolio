@@ -9,7 +9,9 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
   animate:{width:"100vw",height:"100vh",opacity:1},
@@ -37,6 +39,7 @@ function Index() {
         variants={variant2}
         transition={{duration:2}}
         style={{display:"flex",justifyContent:"center",alignItems: "flex-start",paddingTop:"7rem"}}
+        className={classes.experienceC}
       >
       <Flex
     
@@ -58,10 +61,9 @@ function Index() {
        <a target="_blank" rel="noopener noreferrer">HappilyEver Lens</a></Link>
   </Heading>
   </ListItem>
-  
+      <Text sx={{  color: 'white',mt:"2",lineHeight:"none"    }} fontSize='md'>Worked mainly on Frontend part using react and Backend using Golang using gin framework</Text>
+      <Text sx={{  color: 'white',mt:"2",lineHeight:"none"  }} fontSize='md'>My major work is to change the UI. My major contribution is HMA and KYP product. And for testing we learn to use of cypress.</Text>
 </UnorderedList>
-      
-
       </Box>
     </Flex>
     </motion.div>
