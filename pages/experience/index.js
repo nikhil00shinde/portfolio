@@ -11,6 +11,7 @@ import {
   UnorderedList,
 } from '@chakra-ui/react';
 import { Text } from '@chakra-ui/react';
+import Return from '../skill/Return';
 
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
@@ -67,6 +68,7 @@ function Index() {
       </Box>
     </Flex>
     </motion.div>
+     <Return/> 
     </motion.div>
   )
 }

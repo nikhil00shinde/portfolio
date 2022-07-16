@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from "../../styles/skills.module.css";
 import { Text } from '@chakra-ui/react';
 import { Box,SimpleGrid,Center } from "@chakra-ui/react";
-import {motion } from "framer-motion";
+import {motion,useCycle  } from "framer-motion";
 import Image from 'next/image';
 import { skillName } from '../../constants/constant';
+import {ArrowLeftIcon} from "@chakra-ui/icons";
+import About from './About';
+import Return from './Return';
+
 function Index() {
+  const [isVisible,setUseVisible] = useState(false);
+  const handleExit = ()=>{
+  router.push('/')
+  }
   return (
-    <>
-    <div className={classes.container}>
-     <div className={classes.header}></div>
-     <div className={classes.skillsC}>
-      <Text textAlign="center" fontSize='3xl'><bold>Skills</bold></Text>
+      <motion.div
+        className={classes.skillContainer}
+        key="child"
+        initial={{ opacity: 0,height:"0%" }}
+        animate={{ opacity: 1,height:"100%"}}
+        exit={{ opacity: 0,height:"0%" }}
+        transition={{duration:2,ease:"linear"}}
+    >
+    <motion.div className={classes.container}>
+     <motion.div className={classes.header}></motion.div>
+     <motion.div className={classes.containerBoth}>
+     <motion.div className={classes.skillsC}>
+      <Text textAlign="center" fontSize='3xl'><b>Skills</b></Text>
       <SimpleGrid
       textAlign="center"
-  bg='gray.50'
+  bg='white'
   columns={{ sm: 2, md: 3,lg:4 }}
   spacing="8"
   p='10'
@@ -57,10 +73,21 @@ function Index() {
         </Box>
       ))
   }
-</SimpleGrid>
-      </div>
-    </div>
-    </>
+      </SimpleGrid>
+     </motion.div>
+      <Return/>
+     </motion.div>
+     < About setUseVisible={setUseVisible} isVisible={isVisible}/>
+     {isVisible && 
+     <motion.div
+     initial={{ opacity: 0,y: 100 }}
+     animate={{ opacity: 1,y: 0}}
+     transition={{repeatType:"reverse"}}
+      className={classes.refer}>
+      <p>Currently Learning Backend, my interest lie in Data Science and Development. With the development I want to create something that would be benificial to every one.</p>
+     </motion.div>}
+    </motion.div>
+      </motion.div>
   )
 }
 

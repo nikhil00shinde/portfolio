@@ -17,3 +17,16 @@
     padding: 2rem 10px 10px 10px;
   }
 }
+
+.floater{
+  height: 3rem;
+  width: 3rem;
+  background-color: black;
+  position: fixed;
+  top: 80%;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

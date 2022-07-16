@@ -1,24 +1,64 @@
+.skillContainer{
+  height: 100vh;
+  width: 100vw;
+}
 .container{
   height: 100vh;
   width: 100vw;
+  text-align: center;
 }
 .header{
   height: 7%;
   width: 100%;
   background: rgb(0,0,0);
 background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(49,49,55,1) 35%, rgba(191,195,196,1) 100%);
-background-size: 400%;
- animation: bg-animation 30s infinite alternate;
+
 }
 
-@keyframes  bg-animation{
-  0%{background-position: left ;}
-  100%{background-position: right ;}
-}
 
 .header p{
   color: white;
 }
 .skillsC{
-  
+  width: 100%;
+}
+
+.floater{
+  height: 3rem;
+  width: 3rem;
+  background-color: black;
+  position: fixed;
+  top: 80%;
+  left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.refer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.refer p{
+  background: black;
+  border: 1px solid black;
+  width: 20rem;
+  color: white;
+ text-align: center;
+}
+
+.about{
+  height: 3rem;
+  width: 3rem;
+  background-color: black;
+  position: fixed;
+  top: 80%;
+  right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
 }

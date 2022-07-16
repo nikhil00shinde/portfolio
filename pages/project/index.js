@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import Head from 'next/head';
 import Table from "./Table"
+import Return from "../skill/Return";
 
 
 
@@ -14,6 +15,7 @@ function Index(){
       <title>Nikhil&apos;s Project</title>
     </Head>
     <Table/>
+    <Return/>
     </>
 
   )
