@@ -7,7 +7,7 @@ function HomeSection({val}) {
   return (
     <Link href={val.link}>
     <div className={styles.section} >
-        <iframe className={styles.sectionBackground} scrolling="no" src=''></iframe>
+        <iframe className={styles.sectionBackground} scrolling="no" src={`http://localhost:3000/${val.link}`}></iframe>
         <h2 className={`${styles.sectionHeading} ${styles[val.class]}`} style={val.pos}>{val.name}</h2> 
      </div>
     </Link>
