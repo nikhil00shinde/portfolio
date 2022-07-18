@@ -7,7 +7,7 @@ function Return() {
   const router = useRouter();
 
   const handleExit = ()=>{
-    router.push('/')
+    router.push('/');
     }
   return (
     <div className={classes.floater} onClick={handleExit}>

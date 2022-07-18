@@ -1,4 +1,57 @@
 .container{
   background-color: black;
   width: 100vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formContainer{
+  color: white;
+  width: 50%;
+}
+.borderW{
+  color: white;
+  border: 1px solid white;
+  padding: 1rem;
+
+}
+.submit{
+  color: black;
+}
+.submitP{
+  text-align: center;
+}
+
+.formP{
+  margin: 1rem 0;
+}
+.formP label{
+}
+
+.formP .label1{
+  margin-right: 7rem;
+}
+
+.formP .label2{
+  margin-right: 7.2rem;
+}
+
+.formP .label3{
+  margin-right: 2.8rem;
+}
+
+.formP .label4{
+  margin-right: 5rem;
+}
+
+.heading{
+  color: white;
+}
+
+
+@media screen and (max-width:750px) {
+  .formContainer{
+    width: 100%;
+  }
 }
