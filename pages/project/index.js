@@ -13,6 +13,7 @@ function Index(){
     <>
     <Head> 
       <title>Nikhil&apos;s Project</title>
+      <link rel="shortcut icon" href="/home.jpg" type="image/jpg"/>
     </Head>
     <Table/>
     <Return/>

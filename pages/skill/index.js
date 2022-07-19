@@ -8,6 +8,8 @@ import { skillName } from '../../constants/constant';
 import {ArrowLeftIcon} from "@chakra-ui/icons";
 import About from './About';
 import Return from './Return';
+import Head from 'next/head';
+
 
 function Index() {
   const [isVisible,setUseVisible] = useState(false);
@@ -15,6 +17,11 @@ function Index() {
   router.push('/')
   }
   return (
+    <>
+    <Head> 
+      <title>Nikhil&apos;s Skills</title>
+      <link rel="shortcut icon" href="/home.jpg" type="image/jpg"/>
+    </Head>
       <motion.div
         className={classes.skillContainer}
         key="child"
@@ -72,7 +79,7 @@ function Index() {
             </Center>
         </Box>
       ))
-  }
+    }
       </SimpleGrid>
      </motion.div>
       <Return/>
@@ -88,6 +95,7 @@ function Index() {
      </motion.div>}
     </motion.div>
       </motion.div>
+    </>
   )
 }
 

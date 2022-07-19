@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import HomeScreen from './HomeScreen'
 import Loader from './loader'
 
+
 export default function Home() {
 
   let [loader,setLoader] = useState(true)
@@ -17,6 +18,10 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+    <title>Nikhil Shinde Home</title>
+    <link rel="shortcut icon" href="/home.jpg" type="image/jpg"/>
+    </Head>
     {
       loader ? <Loader/> : <HomeScreen/>
     }

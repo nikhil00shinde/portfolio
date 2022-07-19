@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import classes from "../../styles/contact.module.css";
 import {motion} from "framer-motion";
 import Return from "../skill/Return";
+import Head from 'next/head';
 
 const variant = {
   initial:{height:"0vh"},
@@ -30,6 +31,10 @@ function Index() {
   })
 
   return (
+    <>
+    <Head> 
+      <title>Nikhil&apos;s Contact</title>
+    </Head>
     <motion.div
      className={classes.container}
      variants={variant}
@@ -56,7 +61,7 @@ function Index() {
            </p>
            <p className={classes.formP}>
              <label className={classes.label4} htmlFor="comment">Comment:* </label>
-             <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+             <textarea className='' id="comment" name="comment" rows="4" cols="30"></textarea>
            </p>
            <p className={classes.submitP}>
            <input className={classes.submit} type="submit" value="Submit"/>
@@ -68,6 +73,7 @@ function Index() {
       </div>
       <Return/>
     </motion.div>
+     </>
   )
 }
 

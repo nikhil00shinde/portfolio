@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { Text } from '@chakra-ui/react';
 import Return from '../skill/Return';
+import Head from 'next/head';
 
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
@@ -28,6 +29,11 @@ const variant2 = {
 
 function Index() { 
   return (
+    <>
+     <Head> 
+      <title>Nikhil&apos;s Experience</title>
+      <link rel="shortcut icon" href="/home.jpg" type="image/jpg"/>
+    </Head>
     <motion.div
     variants={variant}
     initial="initial"
@@ -44,8 +50,7 @@ function Index() {
       >
       <Flex
     
-      maxW='2xl'
-      centerContent 
+    maxW='2xl' 
       justifyContent="center" 
       alignItems="center"
       flexDirection="column"
@@ -70,6 +75,7 @@ function Index() {
     </motion.div>
      <Return/> 
     </motion.div>
+    </>
   )
 }
 
