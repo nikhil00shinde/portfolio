@@ -3,6 +3,7 @@ import classes from "../../styles/contact.module.css";
 import {motion} from "framer-motion";
 import Return from "../skill/Return";
 import Head from 'next/head';
+import Navbar from '../Navbar';
 
 const variant = {
   initial:{height:"0vh"},
@@ -72,6 +73,7 @@ function Index() {
        </form>
       </div>
       <Return/>
+      <Navbar/>
     </motion.div>
      </>
   )

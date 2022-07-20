@@ -19,6 +19,10 @@ import mongo from "../images/mongodb.png";
 import firebase from "../images/firebase.png";
 import git from "../images/git.svg";
 import pupp from "../images/puppeteer.png"
+import linkdin from "../images/linkedin.svg"
+import github from "../images/github.png";
+import resume from "../images/resume.png";
+import email from "../images/email.png";
 
 export const skillName = [
   {
@@ -76,5 +80,24 @@ export const skillName = [
   {
     name:"Puppeteer",
     src:pupp
+  }
+]
+
+export const links = [
+  {
+    name:"Linkdin",
+    src:linkdin
+  },
+  {
+    name:"Github",
+    src:github
+  },
+  {
+    name:"Resume",
+    src:resume
+  },
+  {
+     name:"Email",
+     src:email
   }
 ]

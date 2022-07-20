@@ -16,7 +16,14 @@ const theme = extendTheme({
           }
         }
       }
-    }
+    },
+     Button: { 
+       baseStyle: { 
+         _focus: { 
+           boxShadow: 'none' 
+          } 
+        } 
+      }
   }
 })
 

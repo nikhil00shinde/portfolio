@@ -13,6 +13,7 @@ import {
 import { Text } from '@chakra-ui/react';
 import Return from '../skill/Return';
 import Head from 'next/head';
+import Navbar from '../Navbar';
 
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
@@ -39,7 +40,7 @@ function Index() {
     initial="initial"
     animate="animate"
     exit="exit"
-    transition={{duration:2,type: "spring", bounce: 0.75,stiffness: 20,mass: 0.3 ,damping: 10 }}
+    transition={{duration:1,type: "spring", bounce: 0.75,stiffness: 20,mass: 0.3 ,damping: 10 }}
     className={classes.container}
     >
       <motion.div
@@ -74,6 +75,7 @@ function Index() {
     </Flex>
     </motion.div>
      <Return/> 
+    <Navbar/>
     </motion.div>
     </>
   )

@@ -9,6 +9,7 @@ import {ArrowLeftIcon} from "@chakra-ui/icons";
 import About from './About';
 import Return from './Return';
 import Head from 'next/head';
+import Navbar from '../Navbar';
 
 
 function Index() {
@@ -94,6 +95,7 @@ function Index() {
       <p>Currently Learning Backend, my interest lie in Data Science and Development. With the development I want to create something that would be benificial to every one.</p>
      </motion.div>}
     </motion.div>
+    <Navbar/>
       </motion.div>
     </>
   )
