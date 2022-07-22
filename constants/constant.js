@@ -86,18 +86,22 @@ export const skillName = [
 export const links = [
   {
     name:"Linkdin",
-    src:linkdin
+    src:linkdin,
+    link:"https://www.linkedin.com/in/nikhil-shinde-04a239193?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwrKRGgVgQhaoT8B8CkA4wg%3D%3D"
   },
   {
     name:"Github",
-    src:github
+    src:github,
+    link:"https://github.com/nikhil00shinde"
   },
   {
     name:"Resume",
-    src:resume
+    src:resume,
+    link:"https://drive.google.com/file/d/1Saqg_ssAZOnnTUe1__VvHVpLIx9HLGuE/view?usp=sharing"
   },
   {
      name:"Email",
-     src:email
+     src:email,
+     link:"mailto:nikhilshinde00@outlook.com"
   }
 ]

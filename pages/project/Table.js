@@ -11,6 +11,7 @@ import classes from "../../styles/project.module.css";
 import { useSpring, animated,config,easings,useTransition } from 'react-spring'
 import { useRouter } from 'next/router'
 import { motion } from "framer-motion";
+import Navbar from "../Navbar";
 const variant = {
   hidden:{opacity:0.5,width:"0%"},
   enter:{opacity:1,width:"100%"},
@@ -26,8 +27,14 @@ function Table2() {
 
   const router = useRouter()
   
-  return (
-    <motion.div className={classes.projectContainer} >
+  return (<>
+    <motion.div className={classes.projectContainer} 
+    variants={variant1}
+    initial="hidden" 
+      animate="enter" 
+       exit="exit"
+       transition={{duration:1.5}}
+    >
       <motion.h1
         variants={variant1}
         initial="hidden" 
@@ -38,9 +45,6 @@ function Table2() {
       >Nikhil&quot;s Project</motion.h1>
       <motion.div
        variants={variant} 
-       initial="hidden" 
-      animate="enter" 
-       exit="exit"
        transition={{duration:1.5}}
        className={classes.tableContainer}>
         <TableContainer  
@@ -69,7 +73,9 @@ function Table2() {
             </Table>
         </TableContainer>
         </motion.div>
+      <Navbar/>
       </motion.div>
+      </>
       )
   
 }

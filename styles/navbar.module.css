@@ -4,6 +4,8 @@
    background-color: white;
    height: 3rem;
    width: 100%;
+   display: flex;
+   justify-content: space-between;
 }
 
 .personalInfo{
@@ -11,4 +13,15 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.image{
+  cursor: pointer;
+}
+.middle{
+  display: flex;
+}
+
+.copyright{
+  color: black;
 }
