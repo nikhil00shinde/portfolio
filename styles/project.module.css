@@ -30,3 +30,17 @@
   align-items: center;
   cursor: pointer;
 }
+
+.refer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.refer p{
+  background: black;
+  border: 1px solid black;
+  width: 20rem;
+  color: white;
+ text-align: center;
+}

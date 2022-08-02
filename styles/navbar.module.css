@@ -9,7 +9,7 @@
 }
 
 .personalInfo{
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -23,5 +23,9 @@
 }
 
 .copyright{
+  width: 30%;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

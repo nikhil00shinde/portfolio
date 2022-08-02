@@ -40,6 +40,10 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(49,49,55,1) 35%, rgba(
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  position: fixed;
+  top: 60%;
+  transform: translateX(-50%);
+  z-index: 100;
 }
 .refer p{
   background: black;
@@ -61,4 +65,10 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(49,49,55,1) 35%, rgba(
   align-items: center;
   cursor: pointer;
   color: white;
+}
+
+@media only screen and (min-width:700px) {
+  .refer{
+    left: 20%;
+  }
 }

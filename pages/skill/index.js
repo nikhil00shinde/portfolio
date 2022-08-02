@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from "../../styles/skills.module.css";
 import { Text } from '@chakra-ui/react';
 import { Box,SimpleGrid,Center } from "@chakra-ui/react";
-import {motion,useCycle  } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"
 import Image from 'next/image';
 import { skillName } from '../../constants/constant';
 import {ArrowLeftIcon} from "@chakra-ui/icons";
@@ -86,16 +86,23 @@ function Index() {
       <Return/>
      </motion.div>
      < About setUseVisible={setUseVisible} isVisible={isVisible}/>
+     <AnimatePresence exitBeforeEnter>
      {isVisible && 
      <motion.div
-     initial={{ opacity: 0,y: 100 }}
-     animate={{ opacity: 1,y: 0}}
-     transition={{repeatType:"reverse"}}
+     drag
+  dragTransition={{
+    min: 0,
+    max: 100
+  }}
+     initial={{ y: "100vw", opacity: 0 }}
+     animate={{ y: 0, opacity: 1 }}
+     exit={{ y: "100vw", opacity: 0 }}
+     transition={{ type: "spring",stiffness:120 }}
       className={classes.refer}>
       <p>Currently Learning Backend, my interest lie in Data Science and Development. With the development I want to create something that would be benificial to every one.</p>
      </motion.div>}
+     </AnimatePresence>
     </motion.div>
-    <Navbar/>
       </motion.div>
     </>
   )

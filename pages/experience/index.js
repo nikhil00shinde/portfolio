@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import classes from "../../styles/experience.module.css";
 import {motion} from "framer-motion";
 import { Flex,Box, Heading, transition } from '@chakra-ui/react';
@@ -14,6 +14,7 @@ import { Text } from '@chakra-ui/react';
 import Return from '../skill/Return';
 import Head from 'next/head';
 import Navbar from '../Navbar';
+import About from '../skill/About';
 
 const variant = {
   initial:{width:"0%",height:"0%",opacity:0},
@@ -29,6 +30,7 @@ const variant2 = {
 }
 
 function Index() { 
+  const [isVisible,setUseVisible] = useState(false);
   return (
     <>
      <Head> 
@@ -75,7 +77,16 @@ function Index() {
     </Flex>
     </motion.div>
      <Return/> 
-    <Navbar/>
+     {isVisible && 
+     <motion.div
+     initial={{ opacity: 0,y: 200 }}
+     animate={{ opacity: 1,y: 0}}
+     transition={{repeatType:"reverse"}}
+      className={classes.refer}>
+      <p>Currently Learning Backend, my interest lie in Data Science and Development. With the development I want to create something that would be benificial to every one.</p>
+     </motion.div>
+     }
+    < About setUseVisible={setUseVisible} isVisible={isVisible}/>
     </motion.div>
     </>
   )

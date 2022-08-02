@@ -15,11 +15,28 @@ const variant = {
 function Index() {
  
   const [submit,setSubmit] = useState(true);
+  const [email,setEmail] = useState("");
+  const [name,setName] = useState("");
+  const [phone,setPhone] = useState("");
+  const [comment,setComment] = useState("")
+  
   
 
-  const handleClick = (e)=>{
+  const handleClick =(e)=>{
+    console.log("runnsf knafkajwf");
     e.preventDefault();
     setSubmit(false);
+    let data = {email,name,phone,comment}
+    fetch("http://localhost:5000/cntc",{
+    method: 'POST',
+    mode:"no-cors",
+    credentials: 'same-origin', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+    }).then((data)=>data.json())
+    .then((json)=> console.log(json))
   };
 
   useEffect(()=>{
@@ -29,7 +46,7 @@ function Index() {
     return ()=>{
       clearTimeout(id)
     }
-  })
+  },[submit])
 
   return (
     <>
@@ -45,24 +62,24 @@ function Index() {
      transition={{duration:2}}
      >
       <div className={classes.formContainer}>
-       <form onClick={handleClick}>
+       <form onSubmit={handleClick} method="POST" >
          <fieldset className={classes.borderW}>
            <legend>Please provide your name, email address and a comment</legend>
            <p className={classes.formP}>
              <label className={classes.label1}  htmlFor="fname">Name:* </label>
-             <input type="text" id="fname" name="fname" required></input>
+             <input onChange={(e)=> setName(e.target.value)} type="text" id="fname" name="fname"  value={name} required style={{color:"black"}}></input>
            </p>
            <p className={classes.formP}>
              <label className={classes.label2} htmlFor="email">Email:* </label>
-             <input type="text" id="email" name="email" required></input>
+             <input style={{color:"black"}} value={email} onChange={(e)=> setEmail(e.target.value)}  type="text" id="email" name="email" required></input>
            </p>
            <p className={classes.formP}>
              <label className={classes.label3}  htmlFor="phone">Phone Number:* </label>
-             <input type="phone" id="phone" name="phone" required></input>
+             <input style={{color:"black"}} value={phone} onChange={(e)=> setPhone(e.target.value)} type="phone" id="phone" name="phone" required></input>
            </p>
            <p className={classes.formP}>
              <label className={classes.label4} htmlFor="comment">Comment:* </label>
-             <textarea className='' id="comment" name="comment" rows="4" cols="30"></textarea>
+             <textarea style={{color:"black"}} value={comment} onChange={(e)=> setComment(e.target.value)}  className='' id="comment" name="comment" rows="4" cols="30"></textarea>
            </p>
            <p className={classes.submitP}>
            <input className={classes.submit} type="submit" value="Submit"/>
